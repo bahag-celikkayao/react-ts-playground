@@ -2,13 +2,12 @@ import React, {FC} from 'react';
 import './App.css';
 import ManageTasks from './Components/ManageTasks';
 import Statistics from './Components/Statistics';
-import MainNavigation from './Components/layout/MainNavigation';
+import Layout from './Components/layout/layout';
 import { Route, Switch } from 'react-router-dom';
 
 const App: FC = () => {
   return (
-    <div className="App">
-      <MainNavigation/>
+    <Layout>
       <Switch>
         <Route path="/" exact={true}>
           <ManageTasks/>
@@ -17,7 +16,7 @@ const App: FC = () => {
           <Statistics/>
         </Route>
       </Switch>
-    </div>
+    </Layout>
   );
 }
 

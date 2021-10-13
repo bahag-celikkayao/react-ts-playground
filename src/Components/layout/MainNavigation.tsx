@@ -9,7 +9,7 @@ const MainNavigation: FC = () =>{
       <nav>
         <ul>
           <li>
-            <Link to='/'>Manage Taks</Link>
+            <Link to='/'>Manage Countdowns</Link>
           </li>
           <li>
             <Link to='/statistics'>Statistics</Link>

@@ -40,10 +40,10 @@ const ManageTasks: FC = () =>{
     <>
       <div className="header">
         <div className="inputContainer">
-          <input type="text" placeholder="Task..." name="task" value={task} onChange={handleChange}/>
+          <input type="text" placeholder="Description..." name="task" value={task} onChange={handleChange}/>
           <input type="number" placeholder="Deadline. (in Days)..." name="deadline" value={deadline} onChange={handleChange}/>
         </div>
-        <button onClick={addTask}>Add Task</button>
+        <button onClick={addTask}>Add Countdown</button>
       </div>
       <div className="todoList">
           {todoList.map((task: ITask, key: number) => {

@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { ITask } from '../interfaces'
+import useCounter from  '../hooks/use-counter'
 
 interface Props {
     task: ITask;
@@ -9,6 +10,7 @@ interface Props {
 
 const TodoTask = ({ task, removeTask, updateTask}: Props) =>{
 
+    const counter = useCounter(false,task.deadline);
     const [edit, setEdit] = useState<boolean>(false);
     const [editDeadline, setEditDeadline] = useState<boolean>(false);
 
@@ -19,7 +21,7 @@ const TodoTask = ({ task, removeTask, updateTask}: Props) =>{
                 {(!edit) && <span onClick={() => {setEdit(!edit)}}>{task.taskName}</span>}
 
                 {(editDeadline) && <input type="text" value={task.deadline} onBlur={() => {setEditDeadline(!editDeadline)}} onChange={(e) => updateTask({...task, deadline: parseInt(e.target.value)})}/>}
-                {(!editDeadline) && <span onClick={() => {setEditDeadline(!editDeadline)}}>{task.deadline}</span>}
+                {(!editDeadline) && <span onClick={() => {setEditDeadline(!editDeadline)}}>{task.deadline} <span className="countdown">{counter}</span></span>}
             </div>
             <button onClick={() => {removeTask(task.id)}}>Remove</button> 
             <input type="checkbox" checked={task.done} onChange={(e) => updateTask({...task, done: e.target.checked})}/>

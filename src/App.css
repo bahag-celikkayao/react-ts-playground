@@ -61,7 +61,7 @@ body{
 }
 
 .header button{
-  width:70px;
+  width:90px;
   height:87px;
   border:none;
   border-bottom-right-radius: 8px;
@@ -98,12 +98,16 @@ body{
 .task .content span{
   display: grid;
   place-items: center;
-  border: 1px solid white;
+  outline: 1px solid white;
   width:100%;
   height:100%;
   font-size:18px;
   border-right: none;
   background-color: tomato;
+}
+
+.task .content span.countdown{
+  font-size:.7rem;
 }
 
 .task button{
